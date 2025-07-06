@@ -1,44 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
   <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="/styles.css">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
+  <main>
+    <div class="" id="overlay"></div>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+    <div class="is-hidden" id="cart-panel"><!-- cart-panel -->
+      <p class="cart-title">Cart</p>
+      <p id="empty-parragraph" class="">Your cart is empty.</p>
 
-  Sneaker Company
+      <div class="is-hidden" id="product-detail">
+        <div class="info">
+          <img src="/images/image-product-1-thumbnail.jpg" alt="" class="image">
+          <div class="name-price">
+            <p class="product-name">Fall Limited Edition Sneakers</p>
+            <p class="price-info">$125.00 x <span id="amount">3</span><span id="total"> $375.000</span></p>
+          </div>
+          <button aria-label="Button to delete current product" type="reset" class="button-delete">
+            <img src="/images/icon-delete.svg" alt="">
+          </button>
+        </div>
+        <button class="checkout-button" aria-label="Button to checkout the order" type="reset">
+          Checkout
+        </button>
+      </div>
+    </div>
 
-  Fall Limited Edition Sneakers
+    <nav>
+      <div class="menu-logo-container">
+        <button aria-label="Menu button" type="button" value="menuButton" class="menu-button">
+          <img src="/images/icon-menu.svg" alt="Menu Icon">
+        </button>
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
+        <img src="/images/logo.svg" alt="" aria-hidden="true" class="logo-icon">
 
-  $125.00
-  50%
-  $250.00
+        <div class="menu-text" id="menu-panel"><!-- menu-text -->
+          <button aria-label="Button to close the menu" type="button" value="menuButton" class="close-menu">
+            <img src="/images/icon-close.svg" alt="">
+          </button>
+          <div class="categories">
+            <p>Collections</p>
+            <p>Men</p>
+            <p>Women</p>
+            <p>About</p>
+            <p>Contact</p>
+          </div>
+        </div>
+      </div>
 
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <div class="cart-avatar-container">
+        <button aria-label="Cart button" type="button" class="cart-button">
+          <div class="is-hidden" id="amount-icon">3</div>
+          <img src="/images/icon-cart.svg" alt="Cart Icon">
+        </button>
+
+        <button aria-label="Avatar button" type="button" class="avatar-button">
+          <img src="/images/image-avatar.png" alt="Avatar Image">
+        </button>
+      </div>
+    </nav>
+
+    <section>
+      <div class="product-image-container">
+
+        <button aria-label="Button to open lightbox view of the image" class="product-image" type="button">
+          <img src="/images/image-product-1.jpg" alt="Product Image">
+        </button>
+
+        <button aria-label="Previous image button" class="next-image-button" type="button" value="-">
+          <img src="/images/icon-previous.svg" alt="Next Icon">
+        </button>
+
+        <button aria-label="Next image button" class="previous-image-button" type="button" value="+">
+          <img src="/images/icon-next.svg" alt="Previous Icon">
+        </button>
+
+        <div class="carrousel">
+          <button type="button" aria-label="Access image 1">
+            <div class="overlayImage">
+              <img src="/images/image-product-1-thumbnail.jpg" alt="Image 1">
+            </div>
+          </button>
+          <button type="button" aria-label="Access image 1">
+            <div class="overlayImage">
+              <img src="/images/image-product-2-thumbnail.jpg" alt=" Image 2">
+            </div>
+          </button>
+          <button type="button" aria-label="Access image 1">
+            <div class="overlayImage">
+              <img src="/images/image-product-3-thumbnail.jpg" alt="Image 3">
+            </div>
+          </button>
+          <button type="button" aria-label="Access image 1">
+            <div class="overlayImage">
+              <img src="/images/image-product-4-thumbnail.jpg" alt="Image 4">
+            </div>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="text-container">
+        <div class="product-info-container">
+          <p class="landmark">Sneaker Company</p>
+          <h1>Fall Limited Edition Sneakers</h1>
+          <p class="description">These low-profile sneakers are your perfect casual wear companion. Featuring a
+            durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        </div>
+
+        <div class="product-price-container">
+          <div class="current-discount-container">
+            <p class="current-price">$125.00</p>
+            <p class="discount">50%</p>
+          </div>
+          <p class="previous-price">$250.00</p>
+        </div>
+
+        <div class="amount-submit-container">
+          <div class="change-amount-container">
+            <button aria-label="Decrease product amount button" type="spinner" value="-">
+              <img src="/images/icon-minus.svg" alt="Minus icon">
+            </button>
+            <p id="product-amount">0</p>
+            <button aria-label="Increase product amount button" type="spinner" value="+">
+              <img src="/images/icon-plus.svg" alt="Plus icon">
+            </button>
+          </div>
+
+          <button type="submit" aria-label="Add the selected product to the cart" class="button-submit">
+            <img src="/images/icon-cart-black.svg" alt="" aria-hidden="true">
+            <p>Add to cart</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="is-hidden" id="container-lightbox">
+
+      <button aria-label="Button to close lightbox" type="button" class="close-modal">
+        <img src="/images/icon-close-white.svg" alt="">
+      </button>
+
+      <button aria-label="Product button to open the image" class="product-image" type="button">
+        <img src="/images/image-product-1.jpg" alt="Product Image">
+      </button>
+
+      <button aria-label="Previous image button" class="next-image-button" type="button" value="-">
+        <img src="/images/icon-previous.svg" alt="Next Icon">
+      </button>
+
+      <button aria-label="Next image button" class="previous-image-button" type="button" value="+">
+        <img src="/images/icon-next.svg" alt="Previous Icon">
+      </button>
+
+      <div class="carrousel">
+        <button type="button" aria-label="Access image 1">
+          <div class="overlayImage">
+            <img src="/images/image-product-1-thumbnail.jpg" alt="Image 1">
+          </div>
+        </button>
+        <button type="button" aria-label="Access image 1">
+          <div class="overlayImage">
+            <img src="/images/image-product-2-thumbnail.jpg" alt=" Image 2">
+          </div>
+        </button>
+        <button type="button" aria-label="Access image 1">
+          <div class="overlayImage">
+            <img src="/images/image-product-3-thumbnail.jpg" alt="Image 3">
+          </div>
+        </button>
+        <button type="button" aria-label="Access image 1">
+          <div class="overlayImage">
+            <img src="/images/image-product-4-thumbnail.jpg" alt="Image 4">
+          </div>
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+  <script src="/script.js"></script>
 </body>
+
 </html>
